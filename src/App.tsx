@@ -2,6 +2,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon, LatLngLiteral } from 'leaflet';
 import MapZone from './components/MapZone';
+import UserLocationMaker from './components/UserLocationMarker';
 
 const testCoords: LatLngLiteral[] = [
   {
@@ -56,6 +57,11 @@ const gearIcon: Icon = new Icon({
   iconSize: [48, 48],
 });
 
+const userIcon: Icon = new Icon({
+  iconUrl: 'https://img.icons8.com/?size=100&id=21832&format=png&color=000000',
+  iconSize: [42, 42],
+});
+
 function App() {
   return (
     <div className="w-full h-[100dvh]">
@@ -80,6 +86,7 @@ function App() {
           zoneName="Gear zone"
           icon={gearIcon}
         />
+        <UserLocationMaker icon={userIcon} />
       </MapContainer>
     </div>
   );
