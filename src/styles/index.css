@@ -2,6 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-y: hidden;
+}
+
 .leaflet-control-container .leaflet-routing-container-hide {
   display: none;
+}
+
+.animate-line {
+  stroke-dasharray: 10;
+  animation: dash 15s linear infinite reverse;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@layer components {
+  .app-button {
+    @apply rounded bg-[#007bff] text-white p-3 my-4;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80dvw;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+  touch-action: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.closed {
+  transform: translateX(100%);
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.sidebar-toggle.closed {
+  right: 5px;
+}
+
+.sidebar-toggle.open {
+  left: 5px;
+}
+
+.sidebar-content {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Adjust this based on your content */
+}
+
+.sidebar-container {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-container.closed {
+  pointer-events: none;
+}
+
+.legend-toggle {
+  position: absolute;
+  top: 4rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.legend-toggle.closed {
+  right: 5px;
+}
+
+.legend-toggle.open {
+  left: 5px;
+  top: 10px;
 }

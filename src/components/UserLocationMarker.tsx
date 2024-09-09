@@ -11,10 +11,11 @@ const defaultIcon = new Icon({
   popupAnchor: [1, -34],
 });
 
-const UserLocationMaker: React.FC<UserLocationMarkerProps> = ({
+const UserLocationMarker: React.FC<UserLocationMarkerProps> = ({
   enableTracking = true,
   icon = defaultIcon,
   snapUserToCenter = false,
+  onLocationUpdate,
 }) => {
   const [position, setPosition] = useState<LatLngLiteral | null>(null);
   const map = useMap();
@@ -34,6 +35,10 @@ const UserLocationMaker: React.FC<UserLocationMarkerProps> = ({
 
       if (snapUserToCenter) {
         map.flyTo(newPos, map.getZoom());
+      }
+
+      if (onLocationUpdate) {
+        onLocationUpdate(newPos);
       }
     };
 
@@ -64,4 +69,4 @@ const UserLocationMaker: React.FC<UserLocationMarkerProps> = ({
   ) : null;
 };
 
-export default UserLocationMaker;
+export default UserLocationMarker;

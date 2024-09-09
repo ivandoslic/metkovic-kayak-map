@@ -1,0 +1,518 @@
+[
+  {
+    "id": 1,
+    "name": "Athlete area",
+    "bounds": [
+      {
+        "lat": 43.055237,
+        "lng": 17.652511
+      },
+      {
+        "lat": 43.055576,
+        "lng": 17.650438
+      },
+      {
+        "lat": 43.055929,
+        "lng": 17.650556
+      },
+      {
+        "lat": 43.055643,
+        "lng": 17.652435
+      },
+      {
+        "lat": 43.055577,
+        "lng": 17.65259
+      },
+      {
+        "lat": 43.055498,
+        "lng": 17.652644
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num3.png",
+      "iconSize": [48, 48]
+    },
+    "description": "Athlete area",
+    "enterance": {
+      "lat": 43.055655,
+      "lng": 17.652386
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 2,
+    "name": "Officials area",
+    "bounds": [
+      {
+        "lat": 43.055855,
+        "lng": 17.649446
+      },
+      {
+        "lat": 43.055796,
+        "lng": 17.649784
+      },
+      {
+        "lat": 43.055682,
+        "lng": 17.64973
+      },
+      {
+        "lat": 43.055741,
+        "lng": 17.649397
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num1.png",
+      "iconSize": [24, 24]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.055739,
+      "lng": 17.649757
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 3,
+    "name": "Masters camp",
+    "bounds": [
+      {
+        "lat": 43.055777,
+        "lng": 17.649177
+      },
+      {
+        "lat": 43.056137,
+        "lng": 17.649354
+      },
+      {
+        "lat": 43.056298,
+        "lng": 17.648496
+      },
+      {
+        "lat": 43.056333,
+        "lng": 17.648405
+      },
+      {
+        "lat": 43.056384,
+        "lng": 17.648276
+      },
+      {
+        "lat": 43.0564,
+        "lng": 17.647943
+      },
+      {
+        "lat": 43.05638,
+        "lng": 17.647734
+      },
+      {
+        "lat": 43.056325,
+        "lng": 17.647509
+      },
+      {
+        "lat": 43.055855,
+        "lng": 17.64746
+      },
+      {
+        "lat": 43.055859,
+        "lng": 17.648303
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num8.png",
+      "iconSize": [48, 48]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.056384,
+      "lng": 17.648276
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 4,
+    "name": "Athlete area",
+    "bounds": [
+      {
+        "lat": 43.054499,
+        "lng": 17.650649
+      },
+      {
+        "lat": 43.054369,
+        "lng": 17.650584
+      },
+      {
+        "lat": 43.054256,
+        "lng": 17.651035
+      },
+      {
+        "lat": 43.054307,
+        "lng": 17.651057
+      },
+      {
+        "lat": 43.054326,
+        "lng": 17.650955
+      },
+      {
+        "lat": 43.054475,
+        "lng": 17.650729
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num3.png",
+      "iconSize": [24, 24]
+    },
+    "description": "Athlete area",
+    "enterance": {
+      "lat": 43.054369,
+      "lng": 17.650584
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 5,
+    "name": "Para-Athletes ramp",
+    "bounds": [
+      {
+        "lat": 43.054322,
+        "lng": 17.651018
+      },
+      {
+        "lat": 43.054307,
+        "lng": 17.651045
+      },
+      {
+        "lat": 43.054311,
+        "lng": 17.650841
+      },
+      {
+        "lat": 43.054334,
+        "lng": 17.650824
+      }
+    ],
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054369,
+      "lng": 17.650584
+    },
+    "type": "PARA-ATHLETS-RAMP"
+  },
+  {
+    "id": 6,
+    "name": "Officials area",
+    "bounds": [
+      {
+        "lat": 43.054534,
+        "lng": 17.649928
+      },
+      {
+        "lat": 43.054479,
+        "lng": 17.650148
+      },
+      {
+        "lat": 43.054569,
+        "lng": 17.650175
+      },
+      {
+        "lat": 43.054605,
+        "lng": 17.649944
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num1.png",
+      "iconSize": [24, 24]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054479,
+      "lng": 17.650148
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 7,
+    "name": "Photographers area",
+    "bounds": [
+      {
+        "lat": 43.054569,
+        "lng": 17.650175
+      },
+      {
+        "lat": 43.054526,
+        "lng": 17.65017
+      },
+      {
+        "lat": 43.054514,
+        "lng": 17.650245
+      },
+      {
+        "lat": 43.054554,
+        "lng": 17.650277
+      }
+    ],
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054479,
+      "lng": 17.650148
+    },
+    "type": "PHOTOGRAPHERS"
+  },
+  {
+    "id": 8,
+    "name": "VIP area",
+    "bounds": [
+      {
+        "lat": 43.054538,
+        "lng": 17.649775
+      },
+      {
+        "lat": 43.054631,
+        "lng": 17.649814
+      },
+      {
+        "lat": 43.054682,
+        "lng": 17.649558
+      },
+      {
+        "lat": 43.054588,
+        "lng": 17.649519
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num7.png",
+      "iconSize": [32, 32]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 9,
+    "name": "TV area",
+    "bounds": [
+      {
+        "lat": 43.054682,
+        "lng": 17.649558
+      },
+      {
+        "lat": 43.05472,
+        "lng": 17.649365
+      },
+      {
+        "lat": 43.054613,
+        "lng": 17.6491
+      },
+      {
+        "lat": 43.054558,
+        "lng": 17.649512
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num4.png",
+      "iconSize": [32, 32]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 10,
+    "name": "Mixed zone",
+    "bounds": [
+      {
+        "lat": 43.054558,
+        "lng": 17.649512
+      },
+      {
+        "lat": 43.054615,
+        "lng": 17.649535
+      },
+      {
+        "lat": 43.05465,
+        "lng": 17.64928
+      },
+      {
+        "lat": 43.054595,
+        "lng": 17.64926
+      }
+    ],
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "type": "MIXED"
+  },
+  {
+    "id": 11,
+    "name": "Photographers area",
+    "bounds": [
+      {
+        "lat": 43.05465,
+        "lng": 17.64928
+      },
+      {
+        "lat": 43.05462,
+        "lng": 17.6492704
+      },
+      {
+        "lat": 43.054628,
+        "lng": 17.64921
+      },
+      {
+        "lat": 43.054655,
+        "lng": 17.64922
+      }
+    ],
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "type": "PHOTOGRAPHERS"
+  },
+  {
+    "id": 12,
+    "name": "Competition area",
+    "bounds": [
+      {
+        "lat": 43.05472,
+        "lng": 17.649365
+      },
+      {
+        "lat": 43.054613,
+        "lng": 17.6491
+      },
+      {
+        "lat": 43.054734,
+        "lng": 17.648373
+      },
+      {
+        "lat": 43.054839,
+        "lng": 17.648
+      },
+      {
+        "lat": 43.05489,
+        "lng": 17.64803
+      },
+      {
+        "lat": 43.054838,
+        "lng": 17.648233
+      },
+      {
+        "lat": 43.054726,
+        "lng": 17.6491
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.64935
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.64954
+      },
+      {
+        "lat": 43.05473,
+        "lng": 17.64954
+      }
+    ],
+    "icon": {
+      "iconUrl": "/num2.png",
+      "iconSize": [24, 24]
+    },
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054479,
+      "lng": 17.650148
+    },
+    "type": "PORTAGE"
+  },
+  {
+    "id": 12,
+    "name": "Pontoons",
+    "bounds": [
+      {
+        "lat": 43.054839,
+        "lng": 17.648
+      },
+      {
+        "lat": 43.05489,
+        "lng": 17.64803
+      },
+      {
+        "lat": 43.05495,
+        "lng": 17.64786
+      },
+      {
+        "lat": 43.054905,
+        "lng": 17.64783
+      }
+    ],
+    "description": "Officials area",
+    "enterance": {
+      "lat": 43.054479,
+      "lng": 17.650148
+    },
+    "type": "PONTOONS"
+  },
+  {
+    "id": 13,
+    "name": "Operational area",
+    "bounds": [
+      {
+        "lat": 43.054828,
+        "lng": 17.64803
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.648024
+      },
+      {
+        "lat": 43.054787,
+        "lng": 17.64773
+      },
+      {
+        "lat": 43.0548375,
+        "lng": 17.64773
+      }
+    ],
+    "description": "Operational area",
+    "icon": {
+      "iconUrl": "/num6.png",
+      "iconSize": [24, 24]
+    },
+    "enterance": {
+      "lat": 43.0548375,
+      "lng": 17.64773
+    },
+    "type": "RESTRICTED"
+  },
+  {
+    "id": 14,
+    "name": "Photographers area",
+    "bounds": [
+      {
+        "lat": 43.05476025,
+        "lng": 17.64827975
+      },
+      {
+        "lat": 43.05472,
+        "lng": 17.64825975
+      },
+      {
+        "lat": 43.05474,
+        "lng": 17.64818
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.6482
+      }
+    ],
+    "description": "Photographers area",
+    "type": "PHOTOGRAPHERS"
+  }
+]
