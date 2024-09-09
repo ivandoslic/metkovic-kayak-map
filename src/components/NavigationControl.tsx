@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationControlProps } from './NavigationControl.types';
 import { useMap } from 'react-leaflet';
-import L from 'leaflet';
+import L, { LatLngLiteral } from 'leaflet';
 import 'leaflet-routing-machine';
 
 const NavigationControl: React.FC<NavigationControlProps> = ({
@@ -9,9 +9,29 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
   userLocation,
 }) => {
   const map = useMap();
+  const [lastChecked, setLastChecked] = useState<number | null>(null);
+  const [currentRControl, setCurrentRControl] =
+    useState<L.Routing.Control | null>(null);
+
+  const [semaphore, setSemaphore] = useState(true);
+  const [lastDestination, setLastDestination] = useState<LatLngLiteral | null>(
+    null
+  );
 
   useEffect(() => {
-    if (destination) console.log(JSON.stringify(destination));
+    if (
+      (currentRControl &&
+        lastChecked &&
+        Date.now() - lastChecked < 30000 &&
+        destination === lastDestination) ||
+      !semaphore
+    ) {
+      return;
+    }
+
+    setLastChecked(Date.now());
+    setLastDestination(destination);
+    setSemaphore(false);
 
     if (!userLocation) {
       console.warn('User location is not available!');
@@ -36,6 +56,8 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       noDraggingPlanOptions
     );
 
+    if (currentRControl) map.removeControl(currentRControl);
+
     const routingControl = L.Routing.control({
       plan: noDraggingPlan,
       lineOptions: {
@@ -49,10 +71,9 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       fitSelectedRoutes: false,
     }).addTo(map);
 
-    return () => {
-      map.removeControl(routingControl);
-    };
-  }, [destination, userLocation, map]);
+    setCurrentRControl(routingControl);
+    setSemaphore(true);
+  }, [destination, userLocation]);
 
   return null;
 };

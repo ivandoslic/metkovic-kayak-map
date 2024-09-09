@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import { Icon, LatLngLiteral } from 'leaflet';
 import MapZone from './components/MapZone';
 import UserLocationMarker from './components/UserLocationMarker';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import NavigationControl from './components/NavigationControl';
 import Sidebar from './components/Sidebar';
 import zoneData from './data/zones.json';
@@ -31,27 +31,12 @@ const startZone: LatLngLiteral = {
 
 function App() {
   const [userLocation, setUserLocation] = useState<LatLngLiteral | null>(null);
-  const [lastUpdatedLocation, setLastUpdatedLocation] =
-    useState<LatLngLiteral | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [setselectedZone, setSetselectedZone] = useState<ZoneData | null>(null);
   const [destinationZone, setDestinationZone] = useState<LatLngLiteral | null>(
     null
   );
   const [isLegendOpen, setIsLegendOpen] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (
-        destinationZone &&
-        userLocation &&
-        lastUpdatedLocation !== userLocation
-      )
-        setLastUpdatedLocation(userLocation);
-    }, 30000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -71,7 +56,6 @@ function App() {
   };
 
   const handleNavigate = (zone: ZoneData) => {
-    console.log('Navigating to', zone.name);
     setDestinationZone(zone.enterance);
     setIsSidebarOpen(false);
   };
@@ -112,7 +96,7 @@ function App() {
         {userLocation && destinationZone && (
           <NavigationControl
             destination={destinationZone}
-            userLocation={lastUpdatedLocation}
+            userLocation={userLocation}
           />
         )}
       </MapContainer>
