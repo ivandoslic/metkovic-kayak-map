@@ -1,4 +1,4 @@
-import { Marker, Polygon, Popup } from 'react-leaflet';
+import { Marker, Polygon } from 'react-leaflet';
 import { useZoneCenter } from '../hooks/useZoneCenter';
 import { MapZoneProps, ZoneType } from './MapZone.types';
 import { Icon, PathOptions } from 'leaflet';
@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import DiagonalHatchPattern from '../utils/DiagonalHatchPattern';
 
 const MapZone: React.FC<MapZoneProps> = ({ zoneData, onClick }) => {
-  const { bounds, icon, name, type } = zoneData;
+  const { bounds, icon, type } = zoneData;
   const center = useZoneCenter(bounds);
   const LIcon = new Icon({
     iconUrl: icon ? icon.iconUrl : '',

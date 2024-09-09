@@ -4,7 +4,6 @@ import { SidebarProps } from './SidebarProps.types';
 const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   toggleSidebar,
-  children,
   loadedZone,
   onNavigate,
 }) => {

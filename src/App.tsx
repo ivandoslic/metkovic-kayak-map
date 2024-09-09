@@ -1,6 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Icon, LatLng, LatLngLiteral } from 'leaflet';
+import { Icon, LatLngLiteral } from 'leaflet';
 import MapZone from './components/MapZone';
 import UserLocationMarker from './components/UserLocationMarker';
 import { useEffect, useState } from 'react';

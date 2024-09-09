@@ -1,4 +1,4 @@
-import { LatLngExpression, Icon, LatLngLiteral } from 'leaflet';
+import { LatLngExpression, LatLngLiteral } from 'leaflet';
 
 export interface MapZoneProps {
   zoneData: ZoneData;
