@@ -91,7 +91,11 @@ function App() {
         />
 
         {zoneData.map((zone) => (
-          <MapZone key={zone.id} zoneData={zone} onClick={handleZoneClick} />
+          <MapZone
+            key={zone.id}
+            zoneData={zone as ZoneData}
+            onClick={handleZoneClick}
+          />
         ))}
 
         {entrancesData.map((entrance) => (
