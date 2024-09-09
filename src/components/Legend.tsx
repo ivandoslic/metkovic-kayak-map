@@ -1,7 +1,12 @@
 import React from 'react';
 import { LegendProps } from './LegentProps';
 
-const Legend: React.FC<LegendProps> = ({ isOpen, toggleLegend }) => {
+const Legend: React.FC<LegendProps> = ({
+  isOpen,
+  toggleLegend,
+  destination,
+  onExitNav,
+}) => {
   return (
     <div
       className={`sidebar-container ${isOpen ? '' : 'closed'}`}
@@ -13,6 +18,14 @@ const Legend: React.FC<LegendProps> = ({ isOpen, toggleLegend }) => {
       >
         {isOpen ? 'Close' : 'Legend'}
       </button>
+      {destination && (
+        <button
+          className={`exit-nav-btn ${isOpen ? 'open' : 'closed'}`}
+          onClick={onExitNav}
+        >
+          Exit navigation
+        </button>
+      )}
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="w-full flex flex-col">
           <div className="flex-1 w-full flex flex-col items-start">

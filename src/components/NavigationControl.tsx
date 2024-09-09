@@ -19,6 +19,20 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
   );
 
   useEffect(() => {
+    console.log('got into useEffect');
+
+    if (!userLocation) {
+      console.warn('User location is not available!');
+      if (currentRControl) map.removeControl(currentRControl);
+      return;
+    }
+
+    if (!destination) {
+      console.warn('Destination zone not set!');
+      if (currentRControl) map.removeControl(currentRControl);
+      return;
+    }
+
     if (
       (currentRControl &&
         lastChecked &&
@@ -32,16 +46,6 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
     setLastChecked(Date.now());
     setLastDestination(destination);
     setSemaphore(false);
-
-    if (!userLocation) {
-      console.warn('User location is not available!');
-      return;
-    }
-
-    if (!destination) {
-      console.warn('Destination zone not set!');
-      return;
-    }
 
     const noDraggingPlanOptions = {
       addWaypoints: false,
@@ -73,6 +77,12 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
 
     setCurrentRControl(routingControl);
     setSemaphore(true);
+
+    return () => {
+      console.log('Unmountig');
+
+      if (!destination) map.removeControl(routingControl);
+    };
   }, [destination, userLocation]);
 
   return null;

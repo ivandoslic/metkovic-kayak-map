@@ -24,6 +24,21 @@ const enteranceIcon: Icon = new Icon({
   iconSize: [24, 24],
 });
 
+const iconOne: Icon = new Icon({
+  iconUrl: '/num1.png',
+  iconSize: [32, 32],
+});
+
+const iconFive: Icon = new Icon({
+  iconUrl: '/num5.png',
+  iconSize: [32, 32],
+});
+
+const iconCatering: Icon = new Icon({
+  iconUrl: '/letterC.png',
+  iconSize: [32, 32],
+});
+
 const startZone: LatLngLiteral = {
   lat: 43.05347671998061,
   lng: 17.653227514163785,
@@ -53,6 +68,10 @@ function App() {
   const handleZoneClick = (zone: ZoneData) => {
     setIsSidebarOpen(true);
     setSetselectedZone(zone);
+  };
+
+  const exitNav = () => {
+    setDestinationZone(null);
   };
 
   const handleNavigate = (zone: ZoneData) => {
@@ -93,15 +112,48 @@ function App() {
           onLocationUpdate={handleUserLocationUpdate}
         />
 
-        {userLocation && destinationZone && (
-          <NavigationControl
-            destination={destinationZone}
-            userLocation={userLocation}
-          />
-        )}
+        <Marker
+          position={{
+            lat: 43.054264,
+            lng: 17.649833,
+          }}
+          icon={iconOne}
+        >
+          <Popup>Officials zone</Popup>
+        </Marker>
+
+        <Marker
+          position={{
+            lat: 43.054137,
+            lng: 17.649782,
+          }}
+          icon={iconFive}
+        >
+          <Popup>Media zone</Popup>
+        </Marker>
+
+        <Marker
+          position={{
+            lat: 43.05401,
+            lng: 17.649731,
+          }}
+          icon={iconCatering}
+        >
+          <Popup>Catering for teams</Popup>
+        </Marker>
+
+        <NavigationControl
+          destination={destinationZone}
+          userLocation={userLocation}
+        />
       </MapContainer>
 
-      <Legend isOpen={isLegendOpen} toggleLegend={toggleLegend} />
+      <Legend
+        isOpen={isLegendOpen}
+        toggleLegend={toggleLegend}
+        destination={destinationZone}
+        onExitNav={exitNav}
+      />
 
       <Sidebar
         isOpen={isSidebarOpen}
