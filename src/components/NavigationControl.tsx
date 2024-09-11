@@ -19,8 +19,6 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
   );
 
   useEffect(() => {
-    console.log('got into useEffect');
-
     if (!userLocation) {
       console.warn('User location is not available!');
       if (currentRControl) map.removeControl(currentRControl);

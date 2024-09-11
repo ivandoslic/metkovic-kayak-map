@@ -1,43 +1,24 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Icon, LatLngLiteral } from 'leaflet';
+import { LatLngLiteral } from 'leaflet';
 import MapZone from './components/MapZone';
 import UserLocationMarker from './components/UserLocationMarker';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavigationControl from './components/NavigationControl';
 import Sidebar from './components/Sidebar';
 import zoneData from './data/zones.json';
 import entrancesData from './data/entrances.json';
 import { ZoneData } from './components/MapZone.types';
 import Legend from './components/Legend';
-
-const userIcon: Icon = new Icon({
-  iconUrl: 'https://img.icons8.com/?size=100&id=21832&format=png&color=000000',
-  iconSize: [42, 42],
-  iconAnchor: [24, 42],
-  popupAnchor: [-1, -42],
-});
-
-const enteranceIcon: Icon = new Icon({
-  iconUrl:
-    'https://img.icons8.com/?size=100&id=gmkcYylpvKxx&format=png&color=000000',
-  iconSize: [24, 24],
-});
-
-const iconOne: Icon = new Icon({
-  iconUrl: '/num1.png',
-  iconSize: [32, 32],
-});
-
-const iconFive: Icon = new Icon({
-  iconUrl: '/num5.png',
-  iconSize: [32, 32],
-});
-
-const iconCatering: Icon = new Icon({
-  iconUrl: '/letterC.png',
-  iconSize: [32, 32],
-});
+import { userIcon, enteranceIcon } from './utils/icons';
+import {
+  infopointZone,
+  openingZone,
+  accreditationZone,
+  officialsPointZone,
+  mediaPointZone,
+  cateringPointZone,
+} from './utils/staticZones';
 
 const startZone: LatLngLiteral = {
   lat: 43.05347671998061,
@@ -52,6 +33,22 @@ function App() {
     null
   );
   const [isLegendOpen, setIsLegendOpen] = useState(false);
+  const [isOpeningDay, setIsOpeningDay] = useState(false);
+
+  useEffect(() => {
+    const today = new Date();
+    const targetDate = new Date('2024-09-16');
+
+    if (
+      today.getFullYear() === targetDate.getFullYear() &&
+      today.getMonth() === targetDate.getMonth() &&
+      today.getDate() === targetDate.getDate()
+    ) {
+      setIsOpeningDay(true);
+    } else {
+      setIsOpeningDay(false);
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -112,35 +109,25 @@ function App() {
           onLocationUpdate={handleUserLocationUpdate}
         />
 
-        <Marker
-          position={{
-            lat: 43.054264,
-            lng: 17.649833,
-          }}
-          icon={iconOne}
-        >
-          <Popup>Officials zone</Popup>
-        </Marker>
+        <MapZone
+          zoneData={officialsPointZone}
+          onClick={handleZoneClick}
+        ></MapZone>
 
-        <Marker
-          position={{
-            lat: 43.054137,
-            lng: 17.649782,
-          }}
-          icon={iconFive}
-        >
-          <Popup>Media zone</Popup>
-        </Marker>
+        <MapZone zoneData={mediaPointZone} onClick={handleZoneClick}></MapZone>
 
-        <Marker
-          position={{
-            lat: 43.05401,
-            lng: 17.649731,
-          }}
-          icon={iconCatering}
-        >
-          <Popup>Catering for teams</Popup>
-        </Marker>
+        <MapZone
+          zoneData={cateringPointZone}
+          onClick={handleZoneClick}
+        ></MapZone>
+
+        {isOpeningDay ? (
+          <MapZone zoneData={openingZone} onClick={handleZoneClick} />
+        ) : (
+          <MapZone zoneData={accreditationZone} onClick={handleZoneClick} />
+        )}
+
+        <MapZone zoneData={infopointZone} onClick={handleZoneClick}></MapZone>
 
         <NavigationControl
           destination={destinationZone}
