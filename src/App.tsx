@@ -2,6 +2,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LatLngLiteral } from 'leaflet';
 import MapZone from './components/MapZone';
+import Snackbar from './components/Snackbar';
 import UserLocationMarker from './components/UserLocationMarker';
 import { useEffect, useState } from 'react';
 import NavigationControl from './components/NavigationControl';
@@ -21,8 +22,8 @@ import {
 } from './utils/staticZones';
 
 const startZone: LatLngLiteral = {
-  lat: 43.05347671998061,
-  lng: 17.653227514163785,
+  lat: 43.054534,
+  lng: 17.651278,
 };
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
   );
   const [isLegendOpen, setIsLegendOpen] = useState(false);
   const [isOpeningDay, setIsOpeningDay] = useState(false);
+  const [followUser, setFollowUser] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -56,6 +58,10 @@ function App() {
 
   const toggleLegend = () => {
     setIsLegendOpen((prev) => !prev);
+  };
+
+  const toggleFollowUser = () => {
+    setFollowUser((prev) => !prev);
   };
 
   const handleUserLocationUpdate = (location: LatLngLiteral) => {
@@ -82,7 +88,7 @@ function App() {
         className="h-full"
         center={startZone}
         style={{ zIndex: 1 }}
-        zoom={21}
+        zoom={17}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -132,6 +138,7 @@ function App() {
         <NavigationControl
           destination={destinationZone}
           userLocation={userLocation}
+          followUser={followUser}
         />
       </MapContainer>
 
@@ -147,7 +154,11 @@ function App() {
         toggleSidebar={toggleSidebar}
         loadedZone={setselectedZone}
         onNavigate={handleNavigate}
+        onUserFollow={toggleFollowUser}
+        isFollowing={followUser}
       ></Sidebar>
+
+      <Snackbar />
     </div>
   );
 }

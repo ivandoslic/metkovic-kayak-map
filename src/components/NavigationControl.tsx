@@ -7,6 +7,7 @@ import 'leaflet-routing-machine';
 const NavigationControl: React.FC<NavigationControlProps> = ({
   destination,
   userLocation,
+  followUser,
 }) => {
   const map = useMap();
   const [lastChecked, setLastChecked] = useState<number | null>(null);
@@ -51,6 +52,7 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       createMarker: function () {
         return false;
       },
+      followUser: followUser,
     };
 
     const noDraggingPlan = new L.Routing.Plan(
@@ -82,6 +84,12 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       if (!destination) map.removeControl(routingControl);
     };
   }, [destination, userLocation]);
+
+  useEffect(() => {
+    if (userLocation && followUser) {
+      map.flyTo(userLocation, 17);
+    }
+  }, [userLocation, followUser, map]);
 
   return null;
 };

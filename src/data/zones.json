@@ -32,7 +32,7 @@
       "iconUrl": "/num3.png",
       "iconSize": [48, 48]
     },
-    "description": "Athlete area",
+    "description": "Area reserved for athletes.",
     "enterance": {
       "lat": 43.055655,
       "lng": 17.652386
@@ -64,7 +64,7 @@
       "iconUrl": "/num1.png",
       "iconSize": [24, 24]
     },
-    "description": "Officials area",
+    "description": "Zone for event officials and staff.",
     "enterance": {
       "lat": 43.055739,
       "lng": 17.649757
@@ -120,7 +120,7 @@
       "iconUrl": "/num8.png",
       "iconSize": [48, 48]
     },
-    "description": "Officials area",
+    "description": "Dedicated space for participants and their teams.",
     "enterance": {
       "lat": 43.056384,
       "lng": 17.648276
@@ -160,7 +160,7 @@
       "iconUrl": "/num3.png",
       "iconSize": [24, 24]
     },
-    "description": "Athlete area",
+    "description": "Area reserved for athletes.",
     "enterance": {
       "lat": 43.054369,
       "lng": 17.650584
@@ -188,7 +188,7 @@
         "lng": 17.650824
       }
     ],
-    "description": "Officials area",
+    "description": "Accessible ramp designed for para-athletes.",
     "enterance": {
       "lat": 43.054369,
       "lng": 17.650584
@@ -220,7 +220,7 @@
       "iconUrl": "/num1.png",
       "iconSize": [24, 24]
     },
-    "description": "Officials area",
+    "description": "Zone for event officials and staff.",
     "enterance": {
       "lat": 43.054479,
       "lng": 17.650148
@@ -248,7 +248,7 @@
         "lng": 17.650277
       }
     ],
-    "description": "Officials area",
+    "description": "Designated section for photographers to capture the event.",
     "enterance": {
       "lat": 43.054479,
       "lng": 17.650148
@@ -280,7 +280,7 @@
       "iconUrl": "/num7.png",
       "iconSize": [32, 32]
     },
-    "description": "Officials area",
+    "description": "Special area reserved for VIP guests.",
     "enterance": {
       "lat": 43.054588,
       "lng": 17.649519
@@ -312,7 +312,7 @@
       "iconUrl": "/num4.png",
       "iconSize": [32, 32]
     },
-    "description": "Officials area",
+    "description": "TV area zone.",
     "enterance": {
       "lat": 43.054588,
       "lng": 17.649519
@@ -340,7 +340,7 @@
         "lng": 17.64926
       }
     ],
-    "description": "Officials area",
+    "description": "A mix of multiple zones.",
     "enterance": {
       "lat": 43.054588,
       "lng": 17.649519
@@ -368,7 +368,7 @@
         "lng": 17.64922
       }
     ],
-    "description": "Officials area",
+    "description": "Designated section for photographers to capture the event.",
     "enterance": {
       "lat": 43.054588,
       "lng": 17.649519
@@ -424,10 +424,10 @@
       "iconUrl": "/num2.png",
       "iconSize": [24, 24]
     },
-    "description": "Officials area",
+    "description": "Central stage for the competition.",
     "enterance": {
-      "lat": 43.054479,
-      "lng": 17.650148
+      "lat": 43.054588,
+      "lng": 17.649519
     },
     "type": "PORTAGE"
   },
@@ -452,10 +452,10 @@
         "lng": 17.64783
       }
     ],
-    "description": "Officials area",
+    "description": "Pontoons area",
     "enterance": {
-      "lat": 43.054479,
-      "lng": 17.650148
+      "lat": 43.054588,
+      "lng": 17.649519
     },
     "type": "PONTOONS"
   },
@@ -480,7 +480,7 @@
         "lng": 17.64773
       }
     ],
-    "description": "Operational area",
+    "description": "Restricted access area for event operations staff.",
     "icon": {
       "iconUrl": "/num6.png",
       "iconSize": [24, 24]
@@ -512,7 +512,39 @@
         "lng": 17.6482
       }
     ],
-    "description": "Photographers area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "description": "Designated section for photographers to capture the event.",
     "type": "PHOTOGRAPHERS"
+  },
+  {
+    "id": 16,
+    "name": "Pontoons",
+    "bounds": [
+      {
+        "lat": 43.05473,
+        "lng": 17.64954
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.64954
+      },
+      {
+        "lat": 43.05478,
+        "lng": 17.64972
+      },
+      {
+        "lat": 43.05473,
+        "lng": 17.64972
+      }
+    ],
+    "description": "Pontoons area",
+    "enterance": {
+      "lat": 43.054588,
+      "lng": 17.649519
+    },
+    "type": "PONTOONS"
   }
 ]

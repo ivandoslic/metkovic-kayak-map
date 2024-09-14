@@ -62,7 +62,8 @@ export const infopointZone: ZoneData = {
       'https://img.icons8.com/?size=100&id=63308&format=png&color=000000',
     iconSize: [32, 32],
   },
-  description: 'Opening ceremony and accreditation zone',
+  description:
+    'Need any information? Come here to info-point! We are waiting and will be at your service.',
   type: ZoneType.MIXED,
 };
 
@@ -83,7 +84,7 @@ export const officialsPointZone: ZoneData = {
     iconUrl: '/num1.png',
     iconSize: [32, 32],
   },
-  description: 'Officials area',
+  description: 'Zone for event officials and staff.',
   type: ZoneType.RESTRICTED,
 };
 
