@@ -55,11 +55,6 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       followUser: followUser,
     };
 
-    const osrm = new L.Routing.OSRMv1({
-      serviceUrl: 'https://kajakbackend.net/route/v1',
-      useHints: false,
-    });
-
     const noDraggingPlan = new L.Routing.Plan(
       [L.latLng(userLocation), L.latLng(destination)],
       noDraggingPlanOptions
@@ -78,7 +73,6 @@ const NavigationControl: React.FC<NavigationControlProps> = ({
       addWaypoints: false,
       routeWhileDragging: true,
       fitSelectedRoutes: false,
-      router: osrm,
     }).addTo(map);
 
     setCurrentRControl(routingControl);
